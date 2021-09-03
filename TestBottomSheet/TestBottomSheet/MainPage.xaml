@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="Gray"
+             x:Class="TestBottomSheet.MainPage">
+
+    <RelativeLayout>
+
+        <StackLayout>
+
+            <ListView x:Name="ItemListView" HasUnevenRows="true" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" BackgroundColor="White" CornerRadius="15" Margin="5">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding title}" FontSize="Medium"/>
+                                    <Label Text="{Binding id}" FontSize="Default"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    
+        </StackLayout>
+       
+        <Frame HasShadow="true" CornerRadius="8" Padding="1,4,1,0" BackgroundColor="#faf9f8"
+                     x:Name="bottomSheet" 
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                        Property=Height,Factor=.92,Constant=0}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression
+                        Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+            <Frame.GestureRecognizers>
+                <PanGestureRecognizer PanUpdated="OnPanUpdated" />
+            </Frame.GestureRecognizers>
+            <StackLayout Spacing="5">
+                <BoxView HeightRequest="5" CornerRadius="2" WidthRequest="50" BackgroundColor="Gray" HorizontalOptions="Center"/>
+                <StackLayout BackgroundColor="White" HeightRequest="25">
+                    
+                </StackLayout>
+
+                <ListView x:Name="ItemListView2" HasUnevenRows="true" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame HasShadow="True" BackgroundColor="FloralWhite" CornerRadius="15" Margin="5">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding id}" FontSize="Default"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </Frame>
+    </RelativeLayout>
+
+</ContentPage>
