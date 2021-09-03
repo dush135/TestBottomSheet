@@ -26,12 +26,9 @@
         </StackLayout>
        
         <Frame HasShadow="true" CornerRadius="8" Padding="1,4,1,0" BackgroundColor="#faf9f8"
-                     x:Name="bottomSheet" 
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-                        Property=Height,Factor=.92,Constant=0}"
-                    RelativeLayout.WidthConstraint="{ConstraintExpression
-                        Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
-                    RelativeLayout.HeightConstraint="{ConstraintExpression
+                     x:Name="bottomSheet" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                        Property=Height,Factor=.92,Constant=0}" RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToParent,Property=Width,Factor=1,Constant=0}" RelativeLayout.HeightConstraint="{ConstraintExpression
                         Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
             <Frame.GestureRecognizers>
                 <PanGestureRecognizer PanUpdated="OnPanUpdated" />
